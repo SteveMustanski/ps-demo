@@ -39,9 +39,9 @@
     <div class="form-group">
       <label for="subscriptionType">Subscription Type</label>
       <select class="form-control" aria-label=".form-select-sm example" id="subscriptionType" name='subscriptionType' [(ngModel)]='userSettings.subscriptionType'>
-        <option value="Monthly">Monthly</option>
-        <option value="Annual">Annually</option>
-        <option value="Liftime">Lifetime</option>
+        <option *ngFor="let type of subscriptionTypes | async">
+          {{ type }}
+        </option>
       </select>
     </div>
     <div class="form-group">
